@@ -1,13 +1,14 @@
+import React from 'react';
 
-
-const titleName = ({heading,subHeading}) => {
+const TitleName = ({heading,subHeading}) => {
     return (
-        <div>
-            <p>{subHeading}</p>
-            <h3>{heading}</h3>
-            <p>How to work</p>
+        <div className='mx-auto md:w-4/12'>
+             <p className='text-yellow-600 text-center'>---{subHeading}---</p>
+             <h3 className='text-4xl uppercase text-center '>{heading}</h3>
         </div>
     );
 };
 
-export default titleName;
+export default TitleName;
+
+
