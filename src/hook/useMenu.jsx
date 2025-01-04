@@ -1,21 +1,24 @@
 import { useEffect, useState } from "react";
 
+const useMenu = () => {
+  const [menu, setMenu] = useState([]); // Default as an empty array
+  const [loading, setLoading] = useState(true); // Default to true since data is loading
 
-const useMenu =()=>{
+  useEffect(() => {
+    setLoading(true); // Ensure loading state is set on fetch
+    fetch("http://localhost:5000/menu")
+      .then((res) => res.json())
+      .then((data) => {
+        setMenu(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching menu data:", error);
+        setLoading(false); // Stop loading even if there's an error
+      });
+  }, []);
 
-    const [menu, setMenu]=useState();
-    const [loading, setLoading]=useState();
+  return [ menu, loading ]; // Return the state
+};
 
-    useEffect(()=>{
-        fetch("")
-        .then(res=>res.json())
-        .then(data=>{
-            setMenu(data)
-            setLoading(false)
-        })
-
-    },[])
-
-}
-
-export default useMenu();
+export default useMenu;
