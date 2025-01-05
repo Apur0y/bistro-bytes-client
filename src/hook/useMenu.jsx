@@ -16,6 +16,8 @@ const useMenu = () => {
         console.error("Error fetching menu data:", error);
         setLoading(false); // Stop loading even if there's an error
       });
+
+     
   }, []);
 
   return [ menu, loading ]; // Return the state

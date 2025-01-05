@@ -4,6 +4,7 @@ import Category from '../Category/Category';
 import { Helmet } from 'react-helmet-async';
 import OurMenu from '../OurMenu/OurMenu';
 import Featured from '../Featured/Featured';
+import Testimonials from '../Testimonials/Testimonials';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <Category></Category>
             <OurMenu></OurMenu>
             <Featured></Featured>
+            <Testimonials></Testimonials>
         </div>
     );
 };
