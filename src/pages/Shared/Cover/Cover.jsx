@@ -16,14 +16,12 @@ const Cover = ({ img,title }) => {
         >
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-neutral-content text-center">
-            <div className="max-w-md bg-black bg-opacity-30 mx-24 py-6">
+            <div className="max-w-md bg-black bg-opacity-30 py-4 px-20">
               <h1 className="mb-5 text-5xl font-bold">{title}</h1>
               <p className="mb-5">
-                Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
+                "The food gonna favorite for you from now on."
               </p>
-              <button className="btn btn-primary">Get Started</button>
+           
             </div>
           </div>
         </div>
