@@ -1,6 +1,7 @@
 import React from "react";
 import MenuCard from "../../Home/OurMenu/MenuCard";
 import Cover from "../../Shared/Cover/Cover";
+import { Link } from "react-router-dom";
 
 const MenuCategory = ({ items,coverImg,title }) => {
   return (
@@ -12,6 +13,9 @@ const MenuCategory = ({ items,coverImg,title }) => {
           <MenuCard key={item._id} item={item}></MenuCard>
         ))}
       </div>
+      <Link to={`/order/${title}`}>
+      <button className="btn btn-outline border-0 border-b-4 text-yellow-600 bg-gray-200">ADD TO CARD</button>
+      </Link>
     </div>
   );
 };
