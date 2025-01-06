@@ -62,7 +62,7 @@ const Footer = () => {
         </nav>
       </footer>
 
-      <footer className="footer footer-center bg-black text-neutral-content items-center p-4">
+      <footer className="footer footer-center bg-slate-900 text-neutral-content items-center p-4">
         <aside className="grid-flow-col items-center">
           <svg
             width="36"

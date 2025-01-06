@@ -1,0 +1,62 @@
+/* Background Gradient Animation */
+.bg-gradient {
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+  }
+  
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Glass Effect for Card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Input Styling */
+  .input {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 5px rgba(99, 102, 241, 0.5);
+  }
+  
+  /* Button Styling */
+  .btn-primary {
+    background-color: #6366f1;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #4f46e5;
+    box-shadow: 0px 5px 15px rgba(79, 70, 229, 0.4);
+  }
+  
+  /* Responsive Styling */
+  @media (min-width: 768px) {
+    .hero {
+      padding: 2rem 0;
+    }
+  
+    .glass-card {
+      padding: 3rem;
+    }
+  }
+  
