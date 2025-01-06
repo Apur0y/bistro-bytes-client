@@ -10,8 +10,10 @@ const OurMenu = () => {
   console.log(populatItems);
   return (
     <div className="my-7">
-
-<TitleName heading={"FROM OUR MENU"} subHeading={"---Check It Out---"}></TitleName>
+      <TitleName
+        heading={"FROM OUR MENU"}
+        subHeading={"---Check It Out---"}
+      ></TitleName>
 
       <div className="grid grid-cols-2 gap-4">
         {populatItems.map((item) => (
