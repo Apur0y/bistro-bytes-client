@@ -1,5 +1,6 @@
 import React from "react";
 import MenuCard from "../../Home/OurMenu/MenuCard";
+import Cover from "../../Shared/Cover/Cover";
 
 const MenuCategory = ({ items,coverImg,title }) => {
   return (
