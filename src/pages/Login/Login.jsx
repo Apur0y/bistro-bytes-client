@@ -1,36 +1,38 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Login.css"; // Import the CSS for animation and styling
-import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
-
+import {
+  loadCaptchaEnginge,
+  LoadCanvasTemplate,
+  LoadCanvasTemplateNoReload,
+  validateCaptcha,
+} from "react-simple-captcha";
+import { IoIosCheckbox } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Login = () => {
+  const captchaRef = useRef();
+  const [disable, setDisable] = useState(true);
 
-  const captchaRef = useRef()
-  const [disable, setDisable] = useState(null)
+  useEffect(() => {
+    loadCaptchaEnginge(6);
+  }, []);
 
-  useEffect(()=>{
-    loadCaptchaEnginge(6); 
-
-  },[])
-
-  const handleLogin =(e)=>{
+  const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
-    const password = form.password.value
-    console.log(email,password);
+    const password = form.password.value;
+    console.log(email, password);
+  };
 
-  }
-
-  const handleCheck=()=>{
-    const user_captch_value = captchaRef.current.value;
-    if (validateCaptcha(user_captcha_value)){
-setDisable(false)
+  const handleCheck = () => {
+    const user_captcha_value = captchaRef.current.value;
+    if (validateCaptcha(user_captcha_value)) {
+      setDisable(false);
+    } else {
+      setDisable(true);
     }
-    else{
-
-    }
-  }
+  };
 
   return (
     <div className="hero bg-gradient min-h-screen flex items-center justify-center">
@@ -44,7 +46,9 @@ setDisable(false)
         <form onSubmit={handleLogin}>
           <div className="form-control mb-4">
             <label className="label mb-2">
-              <span className="label-text font-medium text-gray-700">Email</span>
+              <span className="label-text font-medium text-gray-700">
+                Email
+              </span>
             </label>
             <input
               type="email"
@@ -56,7 +60,9 @@ setDisable(false)
           </div>
           <div className="form-control mb-4">
             <label className="label mb-2">
-              <span className="label-text font-medium text-gray-700">Password</span>
+              <span className="label-text font-medium text-gray-700">
+                Password
+              </span>
             </label>
             <input
               type="password"
@@ -73,21 +79,37 @@ setDisable(false)
           </div>
           <div className="form-control mb-4">
             <label className="label mb-2">
-            <LoadCanvasTemplate />
+              <LoadCanvasTemplate />
             </label>
             <input
               type="password"
-              name="password"
               placeholder="Type the captcha"
               ref={captchaRef}
               className="input input-bordered w-full rounded-md"
               required
             />
-       
           </div>
-          <button onClick={handleCheck} className="btn">Check</button>
+          <div className="flex">
+            <div className="my-auto">
+              {disable ? (
+                <></>
+              ) : (
+                <IoIosCheckbox className="size-6 text-green-600" />
+              )}
+            </div>
+            <button
+              onClick={handleCheck}
+              className="py-1 px-3 bg-slate-300 rounded-lg"
+            >
+              Check
+            </button>
+          </div>
+
           <div className="form-control mt-6">
-            <button disabled={disable} className="btn btn-primary w-full py-3 text-white font-bold rounded-md hover:bg-blue-700">
+            <button
+              disabled={disable}
+              className="btn btn-primary w-full py-3 text-white font-bold rounded-md hover:bg-blue-700"
+            >
               Login
             </button>
           </div>
@@ -98,6 +120,14 @@ setDisable(false)
             Sign Up
           </a>
         </p>
+        <div>
+          <Link
+            to="/"
+            className="btn btn-outline bg-slate-300 border-0 border-b-4"
+          >
+            Home
+          </Link>
+        </div>
       </div>
     </div>
   );
