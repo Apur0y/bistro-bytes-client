@@ -83,7 +83,7 @@ const Login = () => {
             </label>
             <input
               type="password"
-              placeholder="Type the captcha"
+              placeholder="Type the Captcha"
               ref={captchaRef}
               className="input input-bordered w-full rounded-md"
               required
